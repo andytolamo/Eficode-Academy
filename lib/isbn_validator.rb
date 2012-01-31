@@ -12,6 +12,7 @@ class IsbnValidator
 			 	@isbn = isbn.at(0)
 			end
 		end
+
 	end
 
 	
@@ -24,12 +25,22 @@ class IsbnValidator
 		return isbn.delete" "
 	end
 
-	def valid?
-		if ((@isbn.size == 10 || @isbn.size == 13) && @isbn =~ /[0-9]|x/)
-			return true
-		end
+	protected
+		def valid_character(char)
+			puts "<-->#{char}"
+			if char.match('[0-9]{1}')
+				return true
 		return false
+		end
 	end
-	
+	public
+		def valid?
+		 	isbn =  @isbn
+			puts isbn
+			isbn.each_char {|c| self.valid_character(c)}
+			
+		end
+		
+	end
 
-end
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+Steppenwolfe:
+  title: 
+  authors: CC
+  description: DDD
+  isbn: 951-809031-9-4
+two:
+  title: MyString
+  authors: CC
+  description: MyText
